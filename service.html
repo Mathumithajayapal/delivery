@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="transition-colors duration-300">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Services | BuildPro Hardware & Paint Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/jpeg" href="images/hardware-favicon.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+            darkBg: '#0f0f0f',
+            darkCard: '#1a1a1a',
+            darkBorder: '#2c2c2c'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-darkBg dark:text-white transition-colors duration-300 overflow-x-hidden font-sans">
+
+  <!-- Header -->
+  <header class="sticky top-0 w-full bg-white dark:bg-darkCard shadow-sm z-[1000] transition-colors duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
+          <i class="fa-solid fa-paint-roller text-white text-lg"></i>
+        </div>
+        <span class="text-2xl font-semibold tracking-tight text-black dark:text-white">
+          Build<span class="text-primary-500">Pro</span>
+        </span>
+      </a>
+
+      <ul class="hidden xl:flex items-center gap-8">
+        <li class="relative group">
+          <a href="#" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 flex items-center gap-1.5 transition-colors">
+            Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:-rotate-180"></i>
+          </a>
+          <!-- Dropdown menu -->
+          <ul class="absolute top-full ltr:left-0 rtl:right-0 w-48 bg-white dark:bg-darkCard shadow-lg rounded-xl py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+            <li><a href="index.html" class="block px-5 py-2.5 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">Home 1</a></li>
+            <li><a href="home2.html" class="block px-5 py-2.5 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">About</a></li>
+        <li><a href="service.html" class="text-primary-500 font-semibold py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-500 after:rounded-full transition-colors">Services</a></li>
+        <li><a href="delivery.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Bulk Delivery</a></li>
+        <li><a href="maintenance.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Tool Repair</a></li>
+        <li><a href="booking.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Consultation</a></li>
+        <li><a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Contact</a></li>
+      </ul>
+
+      <div class="hidden xl:flex items-center gap-3">
+        <button id="darkToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300">
+          <i class="fa-solid fa-moon"></i>
+        </button> 
+        <button id="rtlToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+        <a href="login.html" class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
+      </div>
+
+      <button id="hamburgerBtn" class="xl:hidden flex flex-col justify-between w-7 h-5 focus:outline-none">
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] opacity-0 invisible transition-all duration-300"></div>
+
+  <div id="mobileMenu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 h-screen w-[85%] max-w-[400px] bg-white dark:bg-darkCard z-[1001] p-8 pt-20 overflow-y-auto transform translate-x-full rtl:-translate-x-full transition-transform duration-300 shadow-2xl">
+    <button id="closeMenuBtn" class="absolute top-5 right-6 rtl:right-auto rtl:left-6 w-10 h-10 flex items-center justify-center rounded-full text-primary-500 text-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">✕</button>
+
+    <ul class="flex flex-col gap-1">
+      <li class="mobile-dropdown-wrapper border-b border-gray-200 dark:border-darkBorder py-2">
+        <div class="mobile-dropdown-toggle flex justify-between items-center cursor-pointer text-gray-900 dark:text-white font-medium text-lg">
+          <span class="flex items-center gap-2">Home</span>
+          <i class="fa-solid fa-chevron-down text-sm text-gray-500 transition-transform duration-300 dropdown-arrow"></i>
+        </div>
+        <div class="mobile-dropdown-content grid grid-rows-[0fr] transition-all duration-300 ltr:pl-4 rtl:pr-4">
+          <div class="overflow-hidden flex flex-col">
+            <a href="index.html" class="py-2 text-gray-800 dark:text-gray-200 font-medium hover:text-primary-500 mt-2">Home 1</a>
+            <a href="home2.html" class="py-2 text-gray-800 dark:text-gray-200 font-medium hover:text-primary-500">Home 2</a>
+          </div>
+        </div>
+      </li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="about.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">About</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="service.html" class="block py-3 text-lg font-semibold text-primary-500">Services</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="delivery.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Bulk Delivery</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="maintenance.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Tool Repair</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="booking.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Consultation</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="contact.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Contact</a></li>
+
+      <li class="pt-6 pb-2">
+        <div class="flex gap-4">
+          <a href="login.html" class="flex-1 text-center py-2.5 rounded-full border-[1.5px] border-primary-500 text-primary-500 font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
+        </div>
+      </li>
+      <li>
+        <div class="flex gap-4">
+          <button id="mobileDarkToggle" class="flex-1 py-2.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-500 hover:text-white transition-colors">🌙 Dark</button>
+          <button id="mobileRtlToggle" class="flex-1 py-2.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hero Banner -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop');">
+    <div class="absolute inset-0 bg-slate-900/80"></div>
+    <div class="relative z-10 text-center p-6 md:p-12 w-full max-w-5xl">
+      <div class="backdrop-blur-md bg-black/40 border border-white/10 rounded-[40px] p-10 md:p-16 shadow-2xl text-left md:text-center">
+        <span class="inline-block px-4 py-1.5 bg-primary-500/20 text-primary-400 font-semibold tracking-wider text-xs md:text-sm rounded-full mb-6 border border-primary-500/30">
+          COMPREHENSIVE STORE SERVICES
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md leading-tight">
+          More Than Just<br>A Hardware Store.
+        </h1>
+        <p class="text-lg md:text-xl text-amber-50 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
+          We offer a full suite of services to support your projects from start to finish. From precision paint color matching and custom lumber cutting to professional tool repair and bulk material delivery.
+        </p>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+          <a href="#store-services" class="px-8 py-4 bg-primary-500 text-white font-semibold rounded-full hover:-translate-y-1 hover:shadow-lg hover:bg-primary-600 transition-all duration-300 text-center">
+            Explore All Services
+          </a>
+          <a href="booking.html" class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:-translate-y-1 hover:bg-white hover:text-primary-600 transition-all duration-300 text-center">
+            Book a Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="w-full">
+    
+    <!-- 6 Unique Service Cards Grid -->
+    <section id="store-services" class="py-24 bg-gray-50 dark:bg-darkBg transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-primary-500 font-bold tracking-widest uppercase text-sm mb-3 block">Our Departments</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Everything You Need In-Store</h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">We provide specialized services right here in our facility to ensure your project is completed with absolute precision and ease.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Service Card 1 -->
+          <article class="group flex flex-col bg-white dark:bg-darkCard rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-lg rounded-bl-lg overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-200 dark:border-darkBorder h-full">
+            <div class="relative h-56 overflow-hidden">
+              <img src="images/image-1.jpg" alt="Paint Mixing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 w-12 h-12 bg-white dark:bg-darkCard rounded-full shadow-lg flex items-center justify-center text-primary-500 text-xl transform group-hover:rotate-12 transition-transform duration-300"><i class="fa-solid fa-palette"></i></div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Custom Paint Mixing</h3>
+              <div class="flex-grow">
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Using cutting-edge spectrophotometer technology, we can perfectly match any color swatch, fabric, or existing paint chip within minutes. Available in all finishes.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="services-details.html" class="inline-flex items-center justify-between w-full px-6 py-3 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white font-semibold rounded-xl hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 transition-colors border border-gray-200 dark:border-darkBorder group-hover:border-primary-500">
+                  View Details <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service Card 2 -->
+          <article class="group flex flex-col bg-white dark:bg-darkCard rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-lg rounded-bl-lg overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-200 dark:border-darkBorder h-full">
+            <div class="relative h-56 overflow-hidden">
+              <img src="images/image-2.jpg" alt="Tool Repair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 w-12 h-12 bg-white dark:bg-darkCard rounded-full shadow-lg flex items-center justify-center text-primary-500 text-xl transform group-hover:rotate-12 transition-transform duration-300"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Expert Tool Repair</h3>
+              <div class="flex-grow">
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Our certified in-house mechanics service and repair all major brands of power tools and pneumatic equipment using genuine OEM parts. Fast turnaround times guaranteed.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="services-details.html" class="inline-flex items-center justify-between w-full px-6 py-3 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white font-semibold rounded-xl hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 transition-colors border border-gray-200 dark:border-darkBorder group-hover:border-primary-500">
+                  View Details <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article class="group flex flex-col bg-white dark:bg-darkCard rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-lg rounded-bl-lg overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-200 dark:border-darkBorder h-full">
+            <div class="relative h-56 overflow-hidden">
+              <img src="images/image-3.jpg" alt="Bulk Delivery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 w-12 h-12 bg-white dark:bg-darkCard rounded-full shadow-lg flex items-center justify-center text-primary-500 text-xl transform group-hover:rotate-12 transition-transform duration-300"><i class="fa-solid fa-truck-fast"></i></div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Job Site Delivery</h3>
+              <div class="flex-grow">
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">We maintain a vast fleet of flatbeds and box trucks to ensure your heavy lumber, drywall, and bulk cement arrive safely at your active job site, exactly when you need them.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="services-details.html" class="inline-flex items-center justify-between w-full px-6 py-3 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white font-semibold rounded-xl hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 transition-colors border border-gray-200 dark:border-darkBorder group-hover:border-primary-500">
+                  View Details <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service Card 4 -->
+          <article class="group flex flex-col bg-white dark:bg-darkCard rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-lg rounded-bl-lg overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-200 dark:border-darkBorder h-full">
+            <div class="relative h-56 overflow-hidden">
+              <img src="images/image-4.jpg" alt="Key Cutting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 w-12 h-12 bg-white dark:bg-darkCard rounded-full shadow-lg flex items-center justify-center text-primary-500 text-xl transform group-hover:rotate-12 transition-transform duration-300"><i class="fa-solid fa-key"></i></div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Precision Key Cutting</h3>
+              <div class="flex-grow">
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Need a spare? Our automated and manual key cutting machines duplicate standard house keys, high-security lock keys, and modern automotive transponder keys flawlessly.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="services-details.html" class="inline-flex items-center justify-between w-full px-6 py-3 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white font-semibold rounded-xl hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 transition-colors border border-gray-200 dark:border-darkBorder group-hover:border-primary-500">
+                  View Details <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service Card 5 -->
+          <article class="group flex flex-col bg-white dark:bg-darkCard rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-lg rounded-bl-lg overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-200 dark:border-darkBorder h-full">
+            <div class="relative h-56 overflow-hidden">
+              <img src="images/image-5.jpg" alt="Lumber Cutting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 w-12 h-12 bg-white dark:bg-darkCard rounded-full shadow-lg flex items-center justify-center text-primary-500 text-xl transform group-hover:rotate-12 transition-transform duration-300"><i class="fa-solid fa-ruler-combined"></i></div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Custom Wood Cutting</h3>
+              <div class="flex-grow">
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Buy your boards here and let our sawyers cut them to your exact specifications. First two cuts are free! We handle plywood, dimensional lumber, and large MDF panels.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="services-details.html" class="inline-flex items-center justify-between w-full px-6 py-3 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white font-semibold rounded-xl hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 transition-colors border border-gray-200 dark:border-darkBorder group-hover:border-primary-500">
+                  View Details <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service Card 6 -->
+          <article class="group flex flex-col bg-white dark:bg-darkCard rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-lg rounded-bl-lg overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-200 dark:border-darkBorder h-full">
+            <div class="relative h-56 overflow-hidden">
+              <img src="images/image-6.jpg" alt="Equipment Rental" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 w-12 h-12 bg-white dark:bg-darkCard rounded-full shadow-lg flex items-center justify-center text-primary-500 text-xl transform group-hover:rotate-12 transition-transform duration-300"><i class="fa-solid fa-tractor"></i></div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Equipment Rental</h3>
+              <div class="flex-grow">
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Why buy an expensive tool for a one-time job? Rent professional-grade pressure washers, floor sanders, concrete mixers, and trenchers by the hour, day, or week.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="services-details.html" class="inline-flex items-center justify-between w-full px-6 py-3 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white font-semibold rounded-xl hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 transition-colors border border-gray-200 dark:border-darkBorder group-hover:border-primary-500">
+                  View Details <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Section 1: The BuildPro Service Guarantee (70-80 lines) -->
+    <section class="py-24 bg-white dark:bg-darkBg transition-colors duration-300 border-t border-gray-100 dark:border-darkBorder relative overflow-hidden">
+      <!-- Decorative Background Elements -->
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-primary-50 dark:bg-zinc-900/40 rounded-l-[100px] -z-10 hidden lg:block"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <!-- Left side content (Header & Image) -->
+          <div class="lg:col-span-5 flex flex-col gap-8">
+            <div>
+              <span class="text-primary-500 font-bold tracking-widest uppercase text-sm mb-3 flex items-center gap-2">
+                <span class="w-8 h-0.5 bg-primary-500 rounded-full"></span> Our Standard
+              </span>
+              <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
+                The BuildPro<br>Service Guarantee
+              </h2>
+              <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                When you hand off a task to our service departments, you are entrusting us with your project's success. We take that responsibility seriously. Every service we perform is backed by our unwavering quality guarantee.
+              </p>
+            </div>
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl h-80 group">
+              <img src="images/image-7.jpg" alt="Store Service Desk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl shadow-lg"><i class="fa-solid fa-medal"></i></div>
+                  <h4 class="text-white font-bold text-xl">100% Satisfaction</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right side content (Detailed Grid) -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Guarantee 1 -->
+            <div class="bg-white dark:bg-darkCard p-8 rounded-2xl border border-gray-100 dark:border-darkBorder shadow-sm hover:shadow-lg transition-shadow">
+              <div class="w-14 h-14 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-stopwatch"></i></div>
+              <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">On-Time Execution</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">If we quote a repair or a custom cut to be finished by Tuesday at noon, it will be ready. We respect your project timelines above all else.</p>
+            </div>
+            <!-- Guarantee 2 -->
+            <div class="bg-white dark:bg-darkCard p-8 rounded-2xl border border-gray-100 dark:border-darkBorder shadow-sm hover:shadow-lg transition-shadow">
+              <div class="w-14 h-14 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-tags"></i></div>
+              <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Transparent Pricing</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">No hidden fees, ever. From equipment rentals to complex tool repairs, the quote we provide upfront is exactly what you pay.</p>
+            </div>
+            <!-- Guarantee 3 -->
+            <div class="bg-white dark:bg-darkCard p-8 rounded-2xl border border-gray-100 dark:border-darkBorder shadow-sm hover:shadow-lg transition-shadow">
+              <div class="w-14 h-14 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-user-shield"></i></div>
+              <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Certified Experts</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Our service desk isn't staffed by beginners. We employ former contractors, certified mechanics, and dedicated paint specialists.</p>
+            </div>
+            <!-- Guarantee 4 -->
+            <div class="bg-white dark:bg-darkCard p-8 rounded-2xl border border-gray-100 dark:border-darkBorder shadow-sm hover:shadow-lg transition-shadow">
+              <div class="w-14 h-14 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-recycle"></i></div>
+              <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Free Reworks</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">If our paint mix doesn't perfectly match your provided swatch, or a cut is off by even a fraction, we redo the work at zero cost to you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Section 2: Trade & Contractor Services (B2B) (70-80 lines) -->
+    <section class="py-24 relative overflow-hidden bg-gray-900 dark:bg-black">
+      <div class="absolute inset-0">
+        <img src="images/image-8.jpg" alt="Construction Work" class="w-full h-full object-cover opacity-20">
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-16 mb-16 border-b border-white/10 pb-16">
+          <div class="lg:w-1/2">
+            <span class="inline-block px-4 py-1.5 bg-primary-500/20 text-primary-400 font-semibold tracking-wider text-sm rounded-full mb-6 border border-primary-500/30">B2B CONTRACTOR PROGRAM</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">Scale Your Business With Dedicated Trade Support</h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
+              Are you a professional contractor, builder, or property manager? Our Pro Services division offers exclusive benefits designed to save your crew time, reduce material costs, and streamline your operations on every job site.
+            </p>
+            <div class="flex items-center gap-4">
+              <a href="signup.html" class="px-8 py-4 bg-primary-500 text-white font-bold rounded-full hover:bg-primary-600 hover:-translate-y-1 transition-all duration-300 shadow-lg">Apply for Pro Account</a>
+              <a href="contact.html" class="px-8 py-4 bg-transparent text-white font-bold rounded-full border-2 border-white/30 hover:border-white hover:bg-white/5 transition-all duration-300">Talk to a Rep</a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex flex-col justify-center text-center">
+              <h4 class="text-5xl font-extrabold text-primary-400 mb-2">20%</h4>
+              <p class="text-white text-sm font-medium">Off Bulk Materials</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex flex-col justify-center text-center">
+              <h4 class="text-5xl font-extrabold text-primary-400 mb-2">30</h4>
+              <p class="text-white text-sm font-medium">Days Net Credit</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex flex-col justify-center text-center">
+              <h4 class="text-5xl font-extrabold text-primary-400 mb-2">24/7</h4>
+              <p class="text-white text-sm font-medium">Dedicated Rep Access</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex flex-col justify-center text-center">
+              <h4 class="text-5xl font-extrabold text-primary-400 mb-2">Free</h4>
+              <p class="text-white text-sm font-medium">Site Deliveries (Zone 1)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400 text-xl border border-primary-500/30 shrink-0"><i class="fa-solid fa-list-check"></i></div>
+            <div>
+              <h4 class="text-white font-bold text-lg mb-2">Volume Quoting</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Upload your blueprints or materials list. Our commercial team will source and price the entire package within 48 hours.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400 text-xl border border-primary-500/30 shrink-0"><i class="fa-solid fa-person-digging"></i></div>
+            <div>
+              <h4 class="text-white font-bold text-lg mb-2">Job Site Staging</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">We don't just dump lumber on the curb. Our fleet uses moffetts to place materials exactly where your crew needs them.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400 text-xl border border-primary-500/30 shrink-0"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <div>
+              <h4 class="text-white font-bold text-lg mb-2">Simplified Billing</h4>
+              <p class="text-gray-400 text-sm leading-relaxed">Manage your spending easily with our digital dashboard. Separate invoices by job site, track POs, and pay securely online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-300 pt-16 pb-8 border-t-4 border-primary-500 mt-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+
+      <div class="flex flex-col">
+        <a href="index.html" class="flex items-center gap-2 mb-6 inline-block">
+          <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center">
+            <i class="fa-solid fa-paint-roller text-white text-lg"></i>
+          </div>
+          <span class="text-2xl font-semibold text-white">Build<span class="text-primary-500">Pro</span></span></a>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">Your trusted partner for all construction, renovation, and painting needs. Supplying top-tier materials for every project.</p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">QuickLinks</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="index.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Home</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contact</a></li>
+          <li><a href="about.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">About Us</a></li>
+          <li><a href="service.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Services</a></li>
+          <li><a href="signup.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Register</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">Connect</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contact Support</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Store Locations</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Careers</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contractor Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">MailBox</h4>
+        <p class="text-gray-400 text-sm mb-4">Subscribe for seasonal tool discounts & 10% off your first paint mixing order.</p>
+        <div class="flex items-center border-b border-gray-800 pb-2 focus-within:border-primary-500 transition-colors">
+          <input type="email" placeholder="Your email" class="bg-transparent w-full outline-none text-white text-sm placeholder:text-gray-600">
+          <button class="text-primary-500 font-semibold hover:text-primary-400 transition-colors ml-2">→</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+      <span>© 2026 BuildPro Hardware & Paint. All rights reserved</span>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-primary-500 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-primary-500 transition-colors">Terms</a>
+        <a href="#" class="hover:text-primary-500 transition-colors">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Dark Mode Logic ---
+    function setDarkMode(isDark) {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('darkMode', isDark);
+
+      const darkToggle = document.getElementById('darkToggleBtn');
+      const mobileDark = document.getElementById('mobileDarkToggle');
+      if (darkToggle) {
+        darkToggle.innerHTML = isDark
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
+      }
+
+      if (mobileDark) {
+          mobileDark.innerHTML = isDark
+              ? '<i class="fa-solid fa-sun"></i> Light'
+              : '<i class="fa-solid fa-moon"></i> Dark';
+      }
+    }
+
+    document.getElementById('darkToggleBtn')?.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark'));
+    });
+    document.getElementById('mobileDarkToggle')?.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark'));
+    });
+
+    if (localStorage.getItem('darkMode') === 'true') {
+      setDarkMode(true);
+    }
+
+    // --- RTL Logic ---
+    function setRTL(isRTL) {
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      localStorage.setItem('rtlMode', isRTL);
+
+      const rtlToggle = document.getElementById('rtlToggleBtn');
+      const mobileRtl = document.getElementById('mobileRtlToggle');
+      if (rtlToggle) rtlToggle.innerText = isRTL ? 'RTL' : 'LTR';
+      if (mobileRtl) mobileRtl.innerText = isRTL ? 'RTL' : 'LTR';
+    }
+
+    const toggleRtlAction = () => {
+      setRTL(document.documentElement.getAttribute('dir') !== 'rtl');
+    };
+
+    document.getElementById('rtlToggleBtn')?.addEventListener('click', toggleRtlAction);
+    document.getElementById('mobileRtlToggle')?.addEventListener('click', toggleRtlAction);
+
+    if (localStorage.getItem('rtlMode') === 'true') {
+      setRTL(true);
+    }
+
+    // --- Mobile Menu Open/Close ---
+    const hamburger = document.getElementById('hamburgerBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    function toggleBodyScroll(lock) {
+      if (lock) document.body.style.overflow = 'hidden';
+      else document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+      mobileOverlay.classList.remove('opacity-0', 'invisible');
+      mobileMenu.classList.remove('translate-x-full', 'rtl:-translate-x-full');
+      mobileMenu.classList.add('translate-x-0', 'rtl:translate-x-0');
+      toggleBodyScroll(true);
+    }
+
+    function closeMobileMenu() {
+      mobileOverlay.classList.add('opacity-0', 'invisible');
+      mobileMenu.classList.add('translate-x-full', 'rtl:-translate-x-full');
+      mobileMenu.classList.remove('translate-x-0', 'rtl:translate-x-0');
+      toggleBodyScroll(false);
+    }
+
+    hamburger?.addEventListener('click', openMobileMenu);
+    closeMenuBtn?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+        closeMobileMenu();
+      }
+    });
+
+    // --- Mobile Dropdown Accordion ---
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const wrapper = toggle.closest('.mobile-dropdown-wrapper');
+        const content = wrapper.querySelector('.mobile-dropdown-content');
+        const arrow = toggle.querySelector('.dropdown-arrow');
+
+        const isOpen = content.classList.contains('grid-rows-[1fr]');
+
+        if (isOpen) {
+          content.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
+          arrow.classList.remove('-rotate-180');
+        } else {
+          content.classList.replace('grid-rows-[0fr]', 'grid-rows-[1fr]');
+          arrow.classList.add('-rotate-180');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

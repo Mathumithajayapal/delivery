@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="transition-colors duration-300">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>About Us | BuildPro Hardware & Paint Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/jpeg" href="images/hardware-favicon.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            /* Updated to an Orange/Amber hardware theme */
+            primary: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+            darkBg: '#0f0f0f',
+            darkCard: '#1a1a1a',
+            darkBorder: '#2c2c2c'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="bg-gray-100 text-gray-900 dark:bg-darkBg dark:text-white transition-colors duration-300 overflow-x-hidden font-sans">
+
+  <!-- Header -->
+  <header class="sticky top-0 w-full bg-white dark:bg-darkCard shadow-sm z-[1000] transition-colors duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div
+          class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
+          <i class="fa-solid fa-paint-roller text-white text-lg"></i>
+        </div>
+        <span class="text-2xl font-semibold tracking-tight text-black dark:text-white">
+          Build<span class="text-primary-500">Pro</span>
+        </span>
+      </a>
+
+      <ul class="hidden xl:flex items-center gap-8">
+        <li class="relative group">
+          <a href="#"
+            class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 flex items-center gap-1.5 transition-colors">
+            Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:-rotate-180"></i>
+          </a>
+          <!-- Dropdown menu -->
+          <ul
+            class="absolute top-full ltr:left-0 rtl:right-0 w-48 bg-white dark:bg-darkCard shadow-lg rounded-xl py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+            <li><a href="index.html"
+                class="block px-5 py-2.5 text-sm text-primary-500 font-semibold hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">
+                Home 1
+              </a></li>
+            <li><a href="home2.html"
+                class="block px-5 py-2.5 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">
+                Home 2
+              </a></li>
+          </ul>
+        </li>
+        <li><a href="about.html"
+            class="text-primary-500 font-semibold py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-500 after:rounded-full transition-colors">About</a>
+        </li>
+        <li><a href="service.html"
+            class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Services</a>
+        </li>
+        <li><a href="delivery.html"
+            class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Bulk Delivery</a></li>
+        <li><a href="maintenance.html"
+            class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Tool Repair</a></li>
+        <li><a href="booking.html"
+            class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Consultation</a>
+        </li>
+        <li><a href="contact.html"
+            class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Contact</a>
+        </li>
+      </ul>
+
+      <div class="hidden xl:flex items-center gap-3">
+        <button id="darkToggleBtn"
+          class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300">
+          <i class="fa-solid fa-moon"></i>
+        </button> 
+        <button id="rtlToggleBtn"
+          class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+        <a href="login.html"
+          class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
+      </div>
+
+      <button id="hamburgerBtn" class="xl:hidden flex flex-col justify-between w-7 h-5 focus:outline-none">
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileOverlay"
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] opacity-0 invisible transition-all duration-300"></div>
+
+  <div id="mobileMenu"
+    class="fixed top-0 right-0 rtl:right-auto rtl:left-0 h-screen w-[85%] max-w-[400px] bg-white dark:bg-darkCard z-[1001] p-8 pt-20 overflow-y-auto transform translate-x-full rtl:-translate-x-full transition-transform duration-300 shadow-2xl">
+    <button id="closeMenuBtn"
+      class="absolute top-5 right-6 rtl:right-auto rtl:left-6 w-10 h-10 flex items-center justify-center rounded-full text-primary-500 text-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">✕</button>
+
+    <ul class="flex flex-col gap-1">
+      <li class="mobile-dropdown-wrapper border-b border-gray-200 dark:border-darkBorder py-2">
+        <div
+          class="mobile-dropdown-toggle flex justify-between items-center cursor-pointer text-gray-900 dark:text-white font-medium text-lg">
+          <span class="flex items-center gap-2">Home</span>
+          <i
+            class="fa-solid fa-chevron-down text-sm transition-transform duration-300 dropdown-arrow"></i>
+        </div>
+        <div class="mobile-dropdown-content grid grid-rows-[0fr] transition-all duration-300 ltr:pl-4 rtl:pr-4">
+          <div class="overflow-hidden flex flex-col">
+            <a href="index.html"
+              class="py-2 text-gray-800 dark:text-gray-200 font-medium hover:text-primary-500 mt-2">Home 1</a>
+            <a href="home2.html" class="py-2 text-gray-800 dark:text-gray-200 font-medium hover:text-primary-500">Home 2</a>
+          </div>
+        </div>
+      </li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="about.html"
+          class="block py-3 text-lg font-semibold text-primary-500">About</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="service.html"
+          class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Services</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="delivery.html"
+          class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Bulk Delivery</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="maintenance.html"
+          class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Tool Repair</a></li>
+  
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="booking.html"
+          class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Consultation</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="contact.html"
+          class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Contact</a></li>
+
+      <li class="pt-6 pb-2">
+        <div class="flex gap-4">
+          <a href="login.html"
+            class="flex-1 text-center py-2.5 rounded-full border-[1.5px] border-primary-500 text-primary-500 font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
+        </div>
+      </li>
+      <li>
+        <div class="flex gap-4">
+          <button id="mobileDarkToggle"
+            class="flex-1 py-2.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-500 hover:text-white transition-colors">🌙
+            Dark</button>
+          <button id="mobileRtlToggle"
+            class="flex-1 py-2.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hero Banner (Modified for About Page) -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-cover bg-center"
+    style="background-image: url('https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=2070&auto=format&fit=crop');">
+    <div class="absolute inset-0 bg-slate-900/80"></div>
+    <div class="relative z-10 text-center p-6 md:p-12 w-full max-w-5xl">
+      <div
+        class="backdrop-blur-md bg-black/40 border border-white/10 rounded-[40px] p-10 md:p-16 shadow-2xl text-left md:text-center">
+        <span
+          class="inline-block px-4 py-1.5 bg-primary-500/20 text-primary-400 font-semibold tracking-wider text-xs md:text-sm rounded-full mb-6 border border-primary-500/30">
+          OUR STORY & MISSION
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md leading-tight">
+          Building Communities,<br>One Project At A Time.
+        </h1>
+        <p class="text-lg md:text-xl text-amber-50 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
+          Since our founding, BuildPro has been committed to equipping professionals and DIYers with top-quality hardware, vibrant paints, and expert advice. Learn what drives us to be your trusted project partner.
+        </p>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+          <a href="contact.html"
+            class="px-8 py-4 bg-primary-500 text-white font-semibold rounded-full hover:-translate-y-1 hover:shadow-lg hover:bg-primary-600 transition-all duration-300 text-center">
+            Contact Our Team
+          </a>
+          <a href="service.html"
+            class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:-translate-y-1 hover:bg-white hover:text-primary-600 transition-all duration-300 text-center">
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content wrapper -->
+  <main class="w-full">
+
+    <!-- ====================================================================== -->
+    <!-- SECTION 1: OUR HISTORY & STORY (approx. 75 lines)                      -->
+    <!-- ====================================================================== -->
+    <section class="py-20 lg:py-28 bg-white dark:bg-darkBg transition-colors duration-300 border-b border-gray-100 dark:border-darkBorder">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="relative h-[450px] md:h-[550px] rounded-[2rem] overflow-hidden shadow-2xl reveal">
+            <img src="images/image-1.jpg" 
+                 alt="Hardware Store History" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-10 left-10 right-10">
+              <div class="w-14 h-14 bg-primary-500 rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+                <i class="fa-solid fa-hammer"></i>
+              </div>
+              <h3 class="text-3xl font-bold text-white mb-2">Since 1995</h3>
+              <p class="text-gray-200 font-medium text-sm md:text-base">Over two decades of excellence.</p>
+            </div>
+          </div>
+          <div class="reveal" style="transition-delay: 150ms;">
+            <span class="text-primary-500 font-bold tracking-wider uppercase text-sm mb-3 block">Our Origins</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">From a Small Shop to an Industry Leader.</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg mb-6 leading-relaxed">
+              BuildPro started as a family-owned corner paint shop dedicated to helping neighbors fix up their homes. Fast forward to today, we've grown into a comprehensive supply center for major contractors.
+            </p>
+            <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed">
+              Our secret hasn't changed: we still believe in a firm handshake, honest pricing, and stocking only the most reliable brands on the market. We don't just sell tools; we supply success.
+            </p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-4 text-gray-800 dark:text-gray-200 font-medium">
+                <div class="w-8 h-8 rounded-full bg-primary-50 dark:bg-primary-500/10 text-primary-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-check"></i></div>
+                Family owned and operated.
+              </li>
+              <li class="flex items-center gap-4 text-gray-800 dark:text-gray-200 font-medium">
+                <div class="w-8 h-8 rounded-full bg-primary-50 dark:bg-primary-500/10 text-primary-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-check"></i></div>
+                Over 50,000 SKUs in stock daily.
+              </li>
+            </ul>
+            <a href="service.html" class="inline-flex items-center gap-2 text-primary-500 font-bold hover:text-primary-600 transition-colors group">
+              See what we offer today <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================== -->
+    <!-- SECTION 2: OUR CORE VALUES (approx. 75 lines)                          -->
+    <!-- ====================================================================== -->
+    <section class="py-20 lg:py-28 bg-gray-50 dark:bg-[#141414] transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 max-w-3xl mx-auto reveal">
+          <span class="text-primary-500 font-bold tracking-wider uppercase text-sm mb-3 block">What Drives Us</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Our Core Values</h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">These four pillars are the foundation of every interaction we have with our contractors, builders, and home improvers.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white dark:bg-darkCard p-8 rounded-[2rem] shadow-sm border border-gray-100 dark:border-darkBorder hover:-translate-y-2 hover:shadow-xl transition-all duration-300 reveal">
+            <div class="w-16 h-16 bg-primary-50 dark:bg-primary-500/10 text-primary-500 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Uncompromising Quality</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">We only stock industry-tested brands. If a tool or paint formula doesn't pass our durability tests, it doesn't make it to our shelves.</p>
+          </div>
+          <div class="bg-white dark:bg-darkCard p-8 rounded-[2rem] shadow-sm border border-gray-100 dark:border-darkBorder hover:-translate-y-2 hover:shadow-xl transition-all duration-300 reveal" style="transition-delay: 100ms;">
+            <div class="w-16 h-16 bg-primary-50 dark:bg-primary-500/10 text-primary-500 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Community First</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">We build strong partnerships with local tradesmen. When our local community succeeds in their builds, we succeed as a store.</p>
+          </div>
+          <div class="bg-white dark:bg-darkCard p-8 rounded-[2rem] shadow-sm border border-gray-100 dark:border-darkBorder hover:-translate-y-2 hover:shadow-xl transition-all duration-300 reveal" style="transition-delay: 200ms;">
+            <div class="w-16 h-16 bg-primary-50 dark:bg-primary-500/10 text-primary-500 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Expert Knowledge</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Our floor staff isn't just retail workers; they are former contractors, painters, and tradesmen who provide real, actionable advice.</p>
+          </div>
+          <div class="bg-white dark:bg-darkCard p-8 rounded-[2rem] shadow-sm border border-gray-100 dark:border-darkBorder hover:-translate-y-2 hover:shadow-xl transition-all duration-300 reveal" style="transition-delay: 300ms;">
+            <div class="w-16 h-16 bg-primary-50 dark:bg-primary-500/10 text-primary-500 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Reliability</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">We know downtime costs money. We ensure tools are repaired rapidly and bulk materials are delivered exactly on schedule.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================== -->
+    <!-- SECTION 3: MEET THE EXPERTS (approx. 75 lines)                         -->
+    <!-- ====================================================================== -->
+    <section class="py-20 lg:py-28 bg-white dark:bg-darkBg transition-colors duration-300 border-y border-gray-100 dark:border-darkBorder">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 max-w-3xl mx-auto reveal">
+          <span class="text-primary-500 font-bold tracking-wider uppercase text-sm mb-3 block">Behind the Counter</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Meet The Pro Team</h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">Our leadership team consists of seasoned veterans in construction, paint mixing, and tool repair.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="bg-gray-50 dark:bg-darkCard rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-darkBorder reveal group">
+            <div class="h-72 overflow-hidden relative">
+              <img src="images/image-2.jpg" alt="Store Manager" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-8 text-center relative">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">Robert Vance</h3>
+              <p class="text-primary-500 font-semibold text-sm uppercase tracking-wide mb-4">Store General Manager</p>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">With 30 years in the hardware industry, Robert oversees our inventory and ensures contractors always have what they need.</p>
+              <div class="flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-darkBg flex items-center justify-center text-gray-400 hover:text-primary-500 shadow-sm transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-darkBg flex items-center justify-center text-gray-400 hover:text-primary-500 shadow-sm transition-colors"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 dark:bg-darkCard rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-darkBorder reveal group" style="transition-delay: 150ms;">
+            <div class="h-72 overflow-hidden relative">
+              <img src="images/image-3.jpg" alt="Repair Technician" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-8 text-center relative">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">Marcus Thorne</h3>
+              <p class="text-primary-500 font-semibold text-sm uppercase tracking-wide mb-4">Head Tool Technician</p>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Certified by DeWalt and Makita, Marcus runs the repair shop, ensuring your power tools are safely restored to factory standards.</p>
+              <div class="flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-darkBg flex items-center justify-center text-gray-400 hover:text-primary-500 shadow-sm transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-darkBg flex items-center justify-center text-gray-400 hover:text-primary-500 shadow-sm transition-colors"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 dark:bg-darkCard rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-darkBorder reveal group" style="transition-delay: 300ms;">
+            <div class="h-72 overflow-hidden relative">
+              <img src="images/image-4.jpg" alt="Paint Specialist" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-8 text-center relative">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">Elena Rodriguez</h3>
+              <p class="text-primary-500 font-semibold text-sm uppercase tracking-wide mb-4">Lead Paint Specialist</p>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Elena brings an artist's eye to color matching. She helps clients find the perfect shade and finish for interior and exterior jobs.</p>
+              <div class="flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-darkBg flex items-center justify-center text-gray-400 hover:text-primary-500 shadow-sm transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-darkBg flex items-center justify-center text-gray-400 hover:text-primary-500 shadow-sm transition-colors"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================== -->
+    <!-- SECTION 4: STATS & CAPABILITIES (approx. 75 lines)                     -->
+    <!-- ====================================================================== -->
+    <section class="py-20 lg:py-28 bg-gray-50 dark:bg-[#141414] transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="order-2 lg:order-1 reveal">
+            <span class="text-primary-500 font-bold tracking-wider uppercase text-sm mb-3 block">By The Numbers</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">Equipped to handle any scale of project.</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed">
+              Whether you are a solo DIYer painting a living room or a commercial developer pouring a foundation, our logistics, stock, and repair capabilities are unmatched in the region.
+            </p>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="p-6 bg-white dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder shadow-sm text-center">
+                <div class="text-4xl font-extrabold text-primary-500 mb-2">50k+</div>
+                <div class="text-gray-800 dark:text-gray-200 font-semibold text-sm">Products In Stock</div>
+              </div>
+              <div class="p-6 bg-white dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder shadow-sm text-center">
+                <div class="text-4xl font-extrabold text-primary-500 mb-2">10k+</div>
+                <div class="text-gray-800 dark:text-gray-200 font-semibold text-sm">Custom Colors Mixed</div>
+              </div>
+              <div class="p-6 bg-white dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder shadow-sm text-center">
+                <div class="text-4xl font-extrabold text-primary-500 mb-2">500+</div>
+                <div class="text-gray-800 dark:text-gray-200 font-semibold text-sm">Tools Repaired Monthly</div>
+              </div>
+              <div class="p-6 bg-white dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder shadow-sm text-center">
+                <div class="text-4xl font-extrabold text-primary-500 mb-2">24/7</div>
+                <div class="text-gray-800 dark:text-gray-200 font-semibold text-sm">Commercial Support</div>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 relative reveal">
+            <div class="relative h-[600px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white dark:border-darkCard">
+              <img src="images/image-5.jpg" alt="Hardware Aisle" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-primary-500/10 mix-blend-multiply"></div>
+              <div class="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-darkBg/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/50">
+                <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-1">Massive Showroom</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Over 25,000 sq.ft of dedicated hardware space.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================== -->
+    <!-- SECTION 5: COMMUNITY & SUSTAINABILITY (approx. 75 lines)               -->
+    <!-- ====================================================================== -->
+    <section class="py-24 relative overflow-hidden bg-primary-600 dark:bg-primary-700 transition-colors duration-300">
+      <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1588854337236-6889d631faa8?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white text-primary-600 text-4xl mb-8 shadow-2xl transform hover:rotate-12 transition-transform duration-300">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">Building a Greener Future.</h2>
+        <p class="text-primary-100 text-lg md:text-xl mb-10 leading-relaxed font-medium max-w-2xl mx-auto">
+          We are committed to sustainability. We exclusively offer zero-VOC paints, recycle old power tool batteries, and source our lumber from sustainably managed forests to protect our local environment.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="service.html" class="px-8 py-4 bg-white text-primary-600 font-bold rounded-full hover:bg-gray-100 transition-colors shadow-lg w-full sm:w-auto text-center">
+            Shop Eco-Friendly
+          </a>
+          <a href="contact.html" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary-600 transition-colors w-full sm:w-auto text-center">
+            Learn About Recycling
+          </a>
+        </div>
+        <div class="mt-16 pt-8 border-t border-white/20 flex flex-wrap justify-center gap-8 text-white/80 font-semibold text-sm">
+          <div class="flex items-center gap-2"><i class="fa-solid fa-recycle text-xl"></i> Battery Recycling Station</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-droplet text-xl"></i> Zero-VOC Paint Mixing</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-tree text-xl"></i> FSC Certified Lumber</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-300 pt-16 pb-8 border-t-4 border-primary-500 mt-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+
+      <div class="flex flex-col">
+        <a href="index.html" class="flex items-center gap-2 mb-6 inline-block">
+          <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center">
+            <i class="fa-solid fa-paint-roller text-white text-lg"></i>
+          </div>
+          <span class="text-2xl font-semibold text-white">Build<span class="text-primary-500">Pro</span></span></a>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">Your trusted partner for all construction, renovation, and painting needs. Supplying top-tier materials for every project.</p>
+        <div class="flex gap-4">
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i
+              class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i
+              class="fa-brands fa-twitter"></i></a>
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i
+              class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">QuickLinks</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="index.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Home</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contact</a>
+          </li>
+          <li><a href="about.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">About Us</a>
+          </li>
+          <li><a href="service.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Services</a>
+          </li>
+          <li><a href="signup.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Register</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">Connect</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contact Support</a>
+          </li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Store Locations</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Careers</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contractor Plans</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">MailBox</h4>
+        <p class="text-gray-400 text-sm mb-4">Subscribe for seasonal tool discounts & 10% off your first paint mixing order.</p>
+        <div class="flex items-center border-b border-gray-800 pb-2 focus-within:border-primary-500 transition-colors">
+          <input type="email" placeholder="Your email"
+            class="bg-transparent w-full outline-none text-white text-sm placeholder:text-gray-600">
+          <button class="text-primary-500 font-semibold hover:text-primary-400 transition-colors ml-2">→</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+      <span>© 2026 BuildPro Hardware & Paint. All rights reserved</span>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-primary-500 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-primary-500 transition-colors">Terms</a>
+        <a href="#" class="hover:text-primary-500 transition-colors">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Dark Mode Logic ---
+    function setDarkMode(isDark) {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('darkMode', isDark);
+
+      const darkToggle = document.getElementById('darkToggleBtn');
+      const mobileDark = document.getElementById('mobileDarkToggle');
+      if (darkToggle) {
+        darkToggle.innerHTML = isDark
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
+      }
+
+      if (mobileDark) {
+          mobileDark.innerHTML = isDark
+              ? '<i class="fa-solid fa-sun"></i> Light'
+              : '<i class="fa-solid fa-moon"></i> Dark';
+      }
+    }
+
+    document.getElementById('darkToggleBtn')?.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark'));
+    });
+    document.getElementById('mobileDarkToggle')?.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark'));
+    });
+
+    if (localStorage.getItem('darkMode') === 'true') {
+      setDarkMode(true);
+    }
+
+    // --- RTL Logic ---
+    function setRTL(isRTL) {
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      localStorage.setItem('rtlMode', isRTL);
+
+      const rtlToggle = document.getElementById('rtlToggleBtn');
+      const mobileRtl = document.getElementById('mobileRtlToggle');
+      if (rtlToggle) rtlToggle.innerText = isRTL ? 'RTL' : 'LTR';
+      if (mobileRtl) mobileRtl.innerText = isRTL ? 'RTL' : 'LTR';
+    }
+
+    const toggleRtlAction = () => {
+      setRTL(document.documentElement.getAttribute('dir') !== 'rtl');
+    };
+
+    document.getElementById('rtlToggleBtn')?.addEventListener('click', toggleRtlAction);
+    document.getElementById('mobileRtlToggle')?.addEventListener('click', toggleRtlAction);
+
+    if (localStorage.getItem('rtlMode') === 'true') {
+      setRTL(true);
+    }
+
+    // --- Mobile Menu Open/Close ---
+    const hamburger = document.getElementById('hamburgerBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    function toggleBodyScroll(lock) {
+      if (lock) document.body.style.overflow = 'hidden';
+      else document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+      mobileOverlay.classList.remove('opacity-0', 'invisible');
+      mobileMenu.classList.remove('translate-x-full', 'rtl:-translate-x-full');
+      mobileMenu.classList.add('translate-x-0', 'rtl:translate-x-0');
+      toggleBodyScroll(true);
+    }
+
+    function closeMobileMenu() {
+      mobileOverlay.classList.add('opacity-0', 'invisible');
+      mobileMenu.classList.add('translate-x-full', 'rtl:-translate-x-full');
+      mobileMenu.classList.remove('translate-x-0', 'rtl:translate-x-0');
+      toggleBodyScroll(false);
+    }
+
+    hamburger?.addEventListener('click', openMobileMenu);
+    closeMenuBtn?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+        closeMobileMenu();
+      }
+    });
+
+    // --- Mobile Dropdown Accordion ---
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const wrapper = toggle.closest('.mobile-dropdown-wrapper');
+        const content = wrapper.querySelector('.mobile-dropdown-content');
+        const arrow = toggle.querySelector('.dropdown-arrow');
+
+        const isOpen = content.classList.contains('grid-rows-[1fr]');
+
+        if (isOpen) {
+          content.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
+          arrow.classList.remove('-rotate-180');
+        } else {
+          content.classList.replace('grid-rows-[0fr]', 'grid-rows-[1fr]');
+          arrow.classList.add('-rotate-180');
+        }
+      });
+    });
+
+    // --- Reveal Animation on Scroll ---
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+
+</html>

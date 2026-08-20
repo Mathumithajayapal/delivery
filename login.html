@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="transition-colors duration-300">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Sign Up | BuildPro Hardware & Paint Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/jpeg" href="images/hardware-favicon.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+            darkBg: '#0f0f0f',
+            darkCard: '#1a1a1a',
+            darkBorder: '#2c2c2c'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-darkBg dark:text-white transition-colors duration-300 font-sans flex flex-col min-h-screen">
+
+  <!-- ===== TOP CONTROLS (Theme & RTL) ===== -->
+  <div class="absolute top-5 right-5 rtl:right-auto rtl:left-5 z-50 flex gap-3 transition-all duration-300">
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="w-10 h-10 rounded-full bg-white dark:bg-darkCard shadow-lg border border-gray-100 dark:border-[#2c2c2c] text-gray-600 dark:text-gray-300 flex items-center justify-center hover:text-primary-500 dark:hover:text-primary-500 transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary-500/50" aria-label="Toggle Theme">
+      <i class="fas fa-moon dark:hidden"></i>
+      <i class="fas fa-sun hidden dark:block"></i>
+    </button>
+    
+    <!-- RTL Toggle -->
+    <button id="rtlToggle" class="w-10 h-10 rounded-full bg-white dark:bg-darkCard shadow-lg border border-gray-100 dark:border-[#2c2c2c] text-gray-600 dark:text-gray-300 flex items-center justify-center font-bold text-[0.85rem] hover:text-primary-500 dark:hover:text-primary-500 transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary-500/50" aria-label="Toggle RTL">
+      <span class="block rtl:hidden">AR</span>
+      <span class="hidden rtl:block">EN</span>
+    </button>
+  </div>
+
+  <!-- MAIN SIGNUP SECTION (No Navbar, No Footer) -->
+  <main class="flex-grow relative flex items-center justify-center py-12 px-4 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581147036324-c1088f121d1b?q=80&w=2070&auto=format&fit=crop');">
+    <!-- Dark overlay for background image -->
+    <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm z-0"></div>
+
+    <!-- ===== SIGN UP CARD ===== -->
+    <div class="max-w-[520px] w-full bg-white dark:bg-darkCard rounded-[32px] px-6 py-8 sm:px-9 sm:py-10 shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.6)] border border-gray-100 dark:border-[#2c2c2c] text-center relative transition-colors duration-300 z-10 rtl:text-right">
+
+      <!-- ===== MATCHING LOGO ===== -->
+      <a href="index.html" class="flex items-center justify-center gap-2 mb-6 rtl:justify-end inline-block">
+        <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center">
+          <i class="fa-solid fa-paint-roller text-white text-lg"></i>
+        </div>
+        <span class="text-2xl font-semibold tracking-tight text-black dark:text-white">
+          Build<span class="text-primary-500">Pro</span>
+        </span>
+      </a>
+
+      <h2 class="text-[1.8rem] mb-[6px] font-display text-gray-900 dark:text-white rtl:text-right">Create Pro Account</h2>
+      <p class="text-gray-500 dark:text-gray-400 text-[0.9rem] mb-6 rtl:text-right">Join us for exclusive trade discounts & tracking</p>
+
+      <!-- Error Message Container -->
+      <div id="signupError" class="hidden items-center gap-2.5 bg-red-500/12 border-l-4 border-red-500 rtl:border-l-0 rtl:border-r-4 px-[14px] py-[10px] rounded-xl mb-5 text-[0.85rem] text-red-500 text-left rtl:text-right">
+        <i class="fas fa-exclamation-triangle"></i> <span id="errorText">Error message here</span>
+      </div>
+
+      <form id="signupForm">
+        <!-- Name Row -->
+        <div class="flex flex-col sm:flex-row gap-0 sm:gap-4">
+          <!-- First Name -->
+          <div class="mb-4 text-left rtl:text-right flex-1">
+            <label class="block font-semibold text-[0.85rem] mb-2 text-gray-900 dark:text-white">
+              <i class="fas fa-user text-primary-500 mr-[6px] rtl:mr-0 rtl:ml-[6px] w-4 text-center"></i> First Name
+            </label>
+            <div class="relative w-full">
+              <input type="text" id="firstNameInput" class="w-full py-3 pl-4 pr-10 rtl:pr-4 rtl:pl-10 text-[0.95rem] font-sans border-2 border-gray-100 dark:border-[#2c2c2c] rounded-[60px] bg-gray-50 dark:bg-[#0f0f0f] text-gray-900 dark:text-gray-100 transition-all duration-300 outline-none focus:border-primary-500 focus:bg-white dark:focus:bg-[#0f0f0f] focus:ring-[3px] focus:ring-primary-500/15 rtl:text-right" placeholder="John" required>
+            </div>
+          </div>
+          <!-- Last Name -->
+          <div class="mb-4 text-left rtl:text-right flex-1">
+            <label class="block font-semibold text-[0.85rem] mb-2 text-gray-900 dark:text-white">
+              <i class="fas fa-users text-primary-500 mr-[6px] rtl:mr-0 rtl:ml-[6px] w-4 text-center"></i> Last Name
+            </label>
+            <div class="relative w-full">
+              <input type="text" id="lastNameInput" class="w-full py-3 pl-4 pr-10 rtl:pr-4 rtl:pl-10 text-[0.95rem] font-sans border-2 border-gray-100 dark:border-[#2c2c2c] rounded-[60px] bg-gray-50 dark:bg-[#0f0f0f] text-gray-900 dark:text-gray-100 transition-all duration-300 outline-none focus:border-primary-500 focus:bg-white dark:focus:bg-[#0f0f0f] focus:ring-[3px] focus:ring-primary-500/15 rtl:text-right" placeholder="Doe" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-4 text-left rtl:text-right">
+          <label class="block font-semibold text-[0.85rem] mb-2 text-gray-900 dark:text-white">
+            <i class="fas fa-envelope text-primary-500 mr-[6px] rtl:mr-0 rtl:ml-[6px] w-4 text-center"></i> Email Address
+          </label>
+          <div class="relative w-full">
+            <input type="email" id="emailInput" class="w-full py-3 pl-4 pr-10 rtl:pr-4 rtl:pl-10 text-[0.95rem] font-sans border-2 border-gray-100 dark:border-[#2c2c2c] rounded-[60px] bg-gray-50 dark:bg-[#0f0f0f] text-gray-900 dark:text-gray-100 transition-all duration-300 outline-none focus:border-primary-500 focus:bg-white dark:focus:bg-[#0f0f0f] focus:ring-[3px] focus:ring-primary-500/15 rtl:text-right" placeholder="pro@builder.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <!-- Password Field with Toggle -->
+        <div class="mb-4 text-left rtl:text-right">
+          <label class="block font-semibold text-[0.85rem] mb-2 text-gray-900 dark:text-white">
+            <i class="fas fa-lock text-primary-500 mr-[6px] rtl:mr-0 rtl:ml-[6px] w-4 text-center"></i> Password
+          </label>
+          <div class="relative w-full">
+            <input type="password" id="passwordInput" class="w-full py-3 pl-4 pr-10 rtl:pr-4 rtl:pl-10 text-[0.95rem] font-sans border-2 border-gray-100 dark:border-[#2c2c2c] rounded-[60px] bg-gray-50 dark:bg-[#0f0f0f] text-gray-900 dark:text-gray-100 transition-all duration-300 outline-none focus:border-primary-500 focus:bg-white dark:focus:bg-[#0f0f0f] focus:ring-[3px] focus:ring-primary-500/15 rtl:text-right" placeholder="Create a password" required autocomplete="new-password">
+            <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 rtl:right-auto rtl:left-4 bg-transparent border-none cursor-pointer text-gray-500 dark:text-gray-400 text-base transition-colors duration-200 hover:text-primary-500" id="togglePassword" aria-label="Show password">
+              <i class="far fa-eye-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password Field with Toggle -->
+        <div class="mb-4 text-left rtl:text-right">
+          <label class="block font-semibold text-[0.85rem] mb-2 text-gray-900 dark:text-white">
+            <i class="fas fa-check-circle text-primary-500 mr-[6px] rtl:mr-0 rtl:ml-[6px] w-4 text-center"></i> Confirm Password
+          </label>
+          <div class="relative w-full">
+            <input type="password" id="confirmPasswordInput" class="w-full py-3 pl-4 pr-10 rtl:pr-4 rtl:pl-10 text-[0.95rem] font-sans border-2 border-gray-100 dark:border-[#2c2c2c] rounded-[60px] bg-gray-50 dark:bg-[#0f0f0f] text-gray-900 dark:text-gray-100 transition-all duration-300 outline-none focus:border-primary-500 focus:bg-white dark:focus:bg-[#0f0f0f] focus:ring-[3px] focus:ring-primary-500/15 rtl:text-right" placeholder="Confirm your password" required autocomplete="new-password">
+            <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 rtl:right-auto rtl:left-4 bg-transparent border-none cursor-pointer text-gray-500 dark:text-gray-400 text-base transition-colors duration-200 hover:text-primary-500" id="toggleConfirmPassword" aria-label="Show password">
+              <i class="far fa-eye-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Options Row (Terms) -->
+        <div class="flex justify-start items-center my-3 mb-6 text-[0.85rem]">
+          <label class="flex items-center gap-2 text-gray-500 dark:text-gray-400 cursor-pointer">
+            <input type="checkbox" id="termsCheck" class="accent-primary-500 w-4 h-4" required> 
+            <span>I agree to the <a href="#" class="text-primary-500 font-semibold hover:underline">Terms & Conditions</a></span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full p-[14px] bg-gradient-to-br from-primary-500 to-primary-600 border-none rounded-[60px] text-white font-bold text-base cursor-pointer transition-all duration-300 shadow-[0_8px_24px_rgba(245,158,11,0.25)] flex items-center justify-center gap-2.5 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(245,158,11,0.4)]" id="signupBtn">
+          Create Account
+        </button>
+      </form>
+
+      <!-- Social Login Section -->
+      <div class="flex items-center gap-4 my-6 text-gray-500 dark:text-gray-400 text-[0.8rem]">
+        <hr class="flex-1 border-none border-t border-gray-200 dark:border-[#2c2c2c]">
+        <span>or sign up with</span>
+        <hr class="flex-1 border-none border-t border-gray-200 dark:border-[#2c2c2c]">
+      </div>
+
+      <div class="flex gap-3 justify-center mb-6">
+        <a href="#" class="group w-11 h-11 rounded-full bg-gray-50 dark:bg-[#0f0f0f] flex items-center justify-center text-[1.1rem] transition-all duration-300 border border-gray-200 dark:border-[#2c2c2c] hover:bg-primary-500 hover:border-primary-500 hover:-translate-y-1" aria-label="Google">
+          <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google" class="w-5 h-5 object-contain">
+        </a>
+        <a href="#" class="group w-11 h-11 rounded-full bg-gray-50 dark:bg-[#0f0f0f] flex items-center justify-center text-[1.1rem] transition-all duration-300 border border-gray-200 dark:border-[#2c2c2c] hover:bg-primary-500 hover:border-primary-500 hover:-translate-y-1" aria-label="Facebook">
+          <i class="fab fa-facebook-f text-[#1877F2] group-hover:text-white transition-colors duration-300"></i>
+        </a>
+        <a href="#" class="group w-11 h-11 rounded-full bg-gray-50 dark:bg-[#0f0f0f] flex items-center justify-center text-[1.1rem] transition-all duration-300 border border-gray-200 dark:border-[#2c2c2c] hover:bg-primary-500 hover:border-primary-500 hover:-translate-y-1" aria-label="Apple">
+          <i class="fab fa-apple text-black dark:text-white group-hover:text-white transition-colors duration-300"></i>
+        </a>
+      </div>
+
+      <!-- Login Link -->
+      <div class="flex justify-center items-center gap-1.5 text-[0.9rem] text-gray-500 dark:text-gray-400 mt-2">
+        <span dir="auto">Already have an account?</span> 
+        <a href="login.html" id="loginLink" class="text-primary-500 font-bold hover:underline">Sign In</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // --- SETTINGS TOGGLES (Theme & RTL) ---
+    const htmlElement = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    const rtlBtn = document.getElementById('rtlToggle');
+
+    // Theme Toggle Functionality
+    themeBtn.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark');
+    });
+
+    // RTL/LTR Toggle Functionality
+    rtlBtn.addEventListener('click', () => {
+      const currentDir = htmlElement.getAttribute('dir');
+      if (currentDir === 'ltr') {
+        htmlElement.setAttribute('dir', 'rtl');
+      } else {
+        htmlElement.setAttribute('dir', 'ltr');
+      }
+    });
+
+    // --- SIGNUP SPECIFIC LOGIC ---
+    const form = document.getElementById('signupForm');
+    const firstNameInput = document.getElementById('firstNameInput');
+    const lastNameInput = document.getElementById('lastNameInput');
+    const emailInput = document.getElementById('emailInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const confirmPasswordInput = document.getElementById('confirmPasswordInput');
+    const termsCheck = document.getElementById('termsCheck');
+    
+    const togglePasswordBtn = document.getElementById('togglePassword');
+    const toggleConfirmPasswordBtn = document.getElementById('toggleConfirmPassword');
+    
+    const errorDiv = document.getElementById('signupError');
+    const errorTextSpan = document.getElementById('errorText');
+    const signupBtn = document.getElementById('signupBtn');
+
+    // Toggle Main Password
+    let passwordVisible = false;
+    togglePasswordBtn.addEventListener('click', () => {
+      passwordVisible = !passwordVisible;
+      passwordInput.type = passwordVisible ? 'text' : 'password';
+      togglePasswordBtn.innerHTML = passwordVisible ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>';
+    });
+
+    // Toggle Confirm Password
+    let confirmPasswordVisible = false;
+    toggleConfirmPasswordBtn.addEventListener('click', () => {
+      confirmPasswordVisible = !confirmPasswordVisible;
+      confirmPasswordInput.type = confirmPasswordVisible ? 'text' : 'password';
+      toggleConfirmPasswordBtn.innerHTML = confirmPasswordVisible ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>';
+    });
+
+    function showError(message) {
+      errorTextSpan.innerText = message;
+      errorDiv.classList.remove('hidden');
+      errorDiv.classList.add('flex');
+      setTimeout(() => {
+        errorDiv.classList.add('hidden');
+        errorDiv.classList.remove('flex');
+      }, 4000);
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const firstName = firstNameInput.value.trim();
+      const lastName = lastNameInput.value.trim();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+      const confirmPassword = confirmPasswordInput.value.trim();
+      
+      if (!firstName || !lastName) {
+          showError('Please enter your full name');
+          return;
+      }
+      if (!email) { 
+          showError('Please enter your email address'); 
+          return; 
+      }
+      if (password.length < 6) { 
+          showError('Password must be at least 6 characters long'); 
+          return; 
+      }
+      if (password !== confirmPassword) {
+          showError('Passwords do not match');
+          return;
+      }
+      if (!termsCheck.checked) {
+          showError('You must agree to the Terms & Conditions');
+          return;
+      }
+
+      // Mock Signup State
+      const originalHTML = signupBtn.innerHTML;
+      signupBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Creating Account...';
+      signupBtn.style.pointerEvents = 'none';
+
+      setTimeout(() => {
+        signupBtn.innerHTML = originalHTML;
+        signupBtn.style.pointerEvents = 'auto';
+        alert('Account created successfully (demo)! Welcome to BuildPro.');
+        // window.location.href = 'login.html'; // In a real app, redirect to login or dashboard
+      }, 1500);
+    });
+  </script>
+</body>
+
+</html>
