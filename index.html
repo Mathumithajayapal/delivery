@@ -256,71 +256,92 @@
         <span class="text-primary-500 font-bold tracking-widest uppercase text-sm mb-2 block">Top Rated</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-12">Bestselling Hardware</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-          <!-- Product Card -->
-          <div class="bg-white dark:bg-darkBg rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-darkBorder group">
-            <div class="relative bg-gray-100 dark:bg-zinc-800 rounded-xl mb-4 overflow-hidden h-56 flex items-center justify-center">
-              <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">SALE</span>
-              <img src="images/image-5.jpg" class="h-40 object-contain group-hover:scale-105 transition-transform" alt="Cordless Drill">
+          
+          <!-- Product Card 1 -->
+          <div class="bg-white dark:bg-darkBg rounded-2xl shadow-sm border border-gray-100 dark:border-darkBorder group flex flex-col overflow-hidden">
+            <!-- Flush Image Container -->
+            <div class="relative bg-gray-100 dark:bg-zinc-800 h-56 w-full overflow-hidden">
+              <span class="absolute top-4 left-4 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">SALE</span>
+              <img src="images/image-5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Cordless Drill">
             </div>
-            <div class="flex text-primary-500 text-xs mb-2">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-              <span class="text-gray-400 ml-2">(124)</span>
-            </div>
-            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Pro 20V Cordless Drill</h4>
-            <div class="flex justify-between items-center mt-4">
-              <div>
-                <span class="text-xl font-extrabold text-gray-900 dark:text-white">$149.99</span>
-                <span class="text-sm text-gray-400 line-through ml-2">$189.99</span>
+            <!-- Padded Text Content -->
+            <div class="p-5 flex flex-col flex-grow">
+              <div class="flex text-primary-500 text-xs mb-2">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                <span class="text-gray-400 ml-2">(124)</span>
               </div>
-              <button class="w-10 h-10 rounded-full bg-primary-500/10 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors flex items-center justify-center"><i class="fa-solid fa-cart-shopping"></i></button>
+              <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Pro 20V Cordless Drill</h4>
+              <div class="flex justify-between items-center mt-auto pt-4">
+                <div>
+                  <span class="text-xl font-extrabold text-gray-900 dark:text-white">$149.99</span>
+                  <span class="text-sm text-gray-400 line-through ml-2">$189.99</span>
+                </div>
+                <button class="w-10 h-10 rounded-full bg-primary-500/10 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors flex items-center justify-center"><i class="fa-solid fa-cart-shopping"></i></button>
+              </div>
             </div>
           </div>
-          <!-- Product Card -->
-          <div class="bg-white dark:bg-darkBg rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-darkBorder group">
-            <div class="relative bg-gray-100 dark:bg-zinc-800 rounded-xl mb-4 overflow-hidden h-56 flex items-center justify-center">
-              <img src="images/image-6.jpg" class="h-40 object-contain group-hover:scale-105 transition-transform" alt="Paint Cans">
+
+          <!-- Product Card 2 -->
+          <div class="bg-white dark:bg-darkBg rounded-2xl shadow-sm border border-gray-100 dark:border-darkBorder group flex flex-col overflow-hidden">
+            <!-- Flush Image Container -->
+            <div class="relative bg-gray-100 dark:bg-zinc-800 h-56 w-full overflow-hidden">
+              <img src="images/image-6.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Paint Cans">
             </div>
-            <div class="flex text-primary-500 text-xs mb-2">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              <span class="text-gray-400 ml-2">(89)</span>
-            </div>
-            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Premium Exterior Paint</h4>
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-xl font-extrabold text-gray-900 dark:text-white">$45.00 <span class="text-sm text-gray-500 font-normal">/ gal</span></span>
-              <button class="w-10 h-10 rounded-full bg-primary-500/10 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors flex items-center justify-center"><i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div class="bg-white dark:bg-darkBg rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-darkBorder group">
-            <div class="relative bg-gray-100 dark:bg-zinc-800 rounded-xl mb-4 overflow-hidden h-56 flex items-center justify-center">
-              <span class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">NEW</span>
-              <img src="images/image-7.jpg" class="h-40 object-contain group-hover:scale-105 transition-transform" alt="Safety Helmet">
-            </div>
-            <div class="flex text-primary-500 text-xs mb-2">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-              <span class="text-gray-400 ml-2">(42)</span>
-            </div>
-            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Industrial Safety Helmet</h4>
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-xl font-extrabold text-gray-900 dark:text-white">$32.50</span>
-              <button class="w-10 h-10 rounded-full bg-primary-500/10 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors flex items-center justify-center"><i class="fa-solid fa-cart-shopping"></i></button>
+            <!-- Padded Text Content -->
+            <div class="p-5 flex flex-col flex-grow">
+              <div class="flex text-primary-500 text-xs mb-2">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span class="text-gray-400 ml-2">(89)</span>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Premium Exterior Paint</h4>
+              <div class="flex justify-between items-center mt-auto pt-4">
+                <span class="text-xl font-extrabold text-gray-900 dark:text-white">$45.00 <span class="text-sm text-gray-500 font-normal">/ gal</span></span>
+                <button class="w-10 h-10 rounded-full bg-primary-500/10 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors flex items-center justify-center"><i class="fa-solid fa-cart-shopping"></i></button>
+              </div>
             </div>
           </div>
-          <!-- Product Card -->
-          <div class="bg-white dark:bg-darkBg rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-darkBorder group">
-            <div class="relative bg-gray-100 dark:bg-zinc-800 rounded-xl mb-4 overflow-hidden h-56 flex items-center justify-center">
-              <img src="images/image-8.jpg" class="h-40 object-contain group-hover:scale-105 transition-transform" alt="Tool Set">
+
+          <!-- Product Card 3 -->
+          <div class="bg-white dark:bg-darkBg rounded-2xl shadow-sm border border-gray-100 dark:border-darkBorder group flex flex-col overflow-hidden">
+            <!-- Flush Image Container -->
+            <div class="relative bg-gray-100 dark:bg-zinc-800 h-56 w-full overflow-hidden">
+              <span class="absolute top-4 left-4 z-10 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">NEW</span>
+              <img src="images/image-7.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Safety Helmet">
             </div>
-            <div class="flex text-primary-500 text-xs mb-2">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              <span class="text-gray-400 ml-2">(210)</span>
-            </div>
-            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">150-Piece Mechanic Tool Set</h4>
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-xl font-extrabold text-gray-900 dark:text-white">$215.00</span>
-              <button class="w-10 h-10 rounded-full bg-primary-500/10 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors flex items-center justify-center"><i class="fa-solid fa-cart-shopping"></i></button>
+            <!-- Padded Text Content -->
+            <div class="p-5 flex flex-col flex-grow">
+              <div class="flex text-primary-500 text-xs mb-2">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                <span class="text-gray-400 ml-2">(42)</span>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Industrial Safety Helmet</h4>
+              <div class="flex justify-between items-center mt-auto pt-4">
+                <span class="text-xl font-extrabold text-gray-900 dark:text-white">$32.50</span>
+                <button class="w-10 h-10 rounded-full bg-primary-500/10 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors flex items-center justify-center"><i class="fa-solid fa-cart-shopping"></i></button>
+              </div>
             </div>
           </div>
+
+          <!-- Product Card 4 -->
+          <div class="bg-white dark:bg-darkBg rounded-2xl shadow-sm border border-gray-100 dark:border-darkBorder group flex flex-col overflow-hidden">
+            <!-- Flush Image Container -->
+            <div class="relative bg-gray-100 dark:bg-zinc-800 h-56 w-full overflow-hidden">
+              <img src="images/image-8.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Tool Set">
+            </div>
+            <!-- Padded Text Content -->
+            <div class="p-5 flex flex-col flex-grow">
+              <div class="flex text-primary-500 text-xs mb-2">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span class="text-gray-400 ml-2">(210)</span>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">150-Piece Mechanic Tool Set</h4>
+              <div class="flex justify-between items-center mt-auto pt-4">
+                <span class="text-xl font-extrabold text-gray-900 dark:text-white">$215.00</span>
+                <button class="w-10 h-10 rounded-full bg-primary-500/10 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors flex items-center justify-center"><i class="fa-solid fa-cart-shopping"></i></button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -488,7 +509,7 @@
               class="fa-brands fa-instagram"></i></a>
           <a href="#"
             class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i
-              class="fa-brands fa-twitter"></i></a>
+              class="fa-brands fa-x-twitter"></i></a>
           <a href="#"
             class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i
               class="fa-brands fa-linkedin-in"></i></a>
