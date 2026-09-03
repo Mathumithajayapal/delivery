@@ -82,7 +82,7 @@
         <li><a href="maintenance.html"
             class="text-primary-500 font-semibold py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-500 after:rounded-full transition-colors">Tool Repair</a></li>
         <li><a href="booking.html"
-            class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Consultation</a>
+            class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Book Now</a>
         </li>
         <li><a href="contact.html"
             class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Contact</a>
@@ -90,6 +90,10 @@
       </ul>
 
       <div class="hidden xl:flex items-center gap-3">
+        <a href="#" class="w-9 h-9 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors relative" title="View Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </a>
         <button id="darkToggleBtn"
           class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300">
           <i class="fa-solid fa-moon"></i>
@@ -143,12 +147,17 @@
           class="block py-3 text-lg font-semibold text-primary-500">Tool Repair</a></li>
   
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="booking.html"
-          class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Consultation</a></li>
+          class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Book Now</a></li>
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="contact.html"
           class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Contact</a></li>
 
       <li class="pt-6 pb-2">
-        <div class="flex gap-4">
+        
+<div class="flex gap-4">
+          <a href="#" class="flex items-center justify-center w-12 rounded-full border-[1.5px] border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:text-primary-500 hover:border-primary-500 transition-colors relative">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+          </a>
           <a href="login.html"
             class="flex-1 text-center py-2.5 rounded-full bg-primary-500 text-white font-semibold hover:bg-primary-600 transition-colors shadow-sm">Login</a>
         </div>
@@ -403,7 +412,7 @@
     </section>
 
     <!-- Section 5: CTA & Guarantee Banner -->
-    <section class="py-24 relative bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=2000&auto=format&fit=crop');">
+    <section class="py-24 relative bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2000&auto=format&fit=crop');">
       <div class="absolute inset-0 bg-gray-900/90 mix-blend-multiply"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="inline-flex items-center justify-center w-20 h-20 bg-primary-500 rounded-full mb-8 shadow-[0_0_30px_rgba(245,158,11,0.5)]">
@@ -417,7 +426,12 @@
           <a href="booking.html" class="px-10 py-4 bg-primary-500 text-white font-bold rounded-full hover:bg-primary-600 transition-colors shadow-lg hover:-translate-y-1 transform duration-300 text-lg w-full sm:w-auto">
             Book a Drop-Off
           </a>
-          <span class="text-gray-400 font-medium">or call <a href="tel:+18005558665" class="text-white hover:text-primary-500 transition-colors">(800) 555-TOOL</a></span>
+          <span class="text-gray-300 font-medium flex items-center gap-3">
+            or call 
+            <a href="tel:+18005558665" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 border border-white/20 rounded-xl text-white font-bold hover:bg-white/20 hover:border-white/40 transition-all duration-300 backdrop-blur-md shadow-lg">
+              <i class="fa-solid fa-phone"></i> (800) 555-TOOL
+            </a>
+          </span>
         </div>
         
         <!-- Trust Indicators -->
@@ -626,3 +640,4 @@
 </body>
 
 </html>
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" class="transition-colors duration-300">
 
 <head>
@@ -41,7 +41,11 @@
   <!-- ===== TOP CONTROLS (Theme & RTL) ===== -->
   <div class="absolute top-5 right-5 rtl:right-auto rtl:left-5 z-50 flex gap-3 transition-all duration-300">
     <!-- Theme Toggle -->
-    <button id="darkToggleBtn"
+        <a href="#" class="w-9 h-9 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors relative" title="View Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </a>
+        <button id="darkToggleBtn"
       class="w-10 h-10 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 bg-white dark:bg-darkCard rounded-full shadow-lg hover:bg-primary-500 hover:text-white transition-all duration-300" aria-label="Toggle Theme">
       <i class="fa-solid fa-moon"></i>
     </button> 
@@ -312,3 +316,4 @@
 </body>
 
 </html>
+
