@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="transition-colors duration-300">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Our Brands | BuildPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/jpeg" href="images/hardware-favicon.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+            darkBg: '#0f0f0f',
+            darkCard: '#1a1a1a',
+            darkBorder: '#2c2c2c'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-darkBg dark:text-white transition-colors duration-300 overflow-x-hidden font-sans">
+
+  <!-- Header -->
+  <header class="sticky top-0 w-full bg-white dark:bg-darkCard shadow-sm z-[1000] transition-colors duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
+          <i class="fa-solid fa-paint-roller text-white text-lg"></i>
+        </div>
+        <span class="text-2xl font-semibold tracking-tight text-black dark:text-white">
+          Build<span class="text-primary-500">Pro</span>
+        </span>
+      </a>
+
+      <ul class="hidden xl:flex items-center gap-8">
+        <li class="relative group">
+          <a href="#" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 flex items-center gap-1.5 transition-colors">
+            Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:-rotate-180"></i>
+          </a>
+          <ul class="absolute top-full ltr:left-0 rtl:right-0 w-48 bg-white dark:bg-darkCard shadow-lg rounded-xl py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+            <li><a href="index.html" class="block px-5 py-2.5 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">Home 1</a></li>
+            <li><a href="home2.html" class="block px-5 py-2.5 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">About</a></li>
+        <li><a href="service.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Services</a></li>
+        <li><a href="delivery.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Bulk Delivery</a></li>
+        <li><a href="maintenance.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Tool Repair</a></li>
+        <li><a href="booking.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Book Now</a></li>
+        <li><a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Contact</a></li>
+        <li><a href="brand.html" class="px-5 py-1.5 bg-primary-500 text-white rounded-full text-sm font-semibold hover:bg-primary-600 transition-colors shadow-sm">Brand</a></li>
+      </ul>
+      <div class="hidden xl:flex items-center gap-3">
+        <a href="#" class="w-9 h-9 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors relative" title="View Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </a>
+        <button id="darkToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300">
+          <i class="fa-solid fa-moon"></i>
+        </button> 
+        <button id="rtlToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+      </div>
+
+      <button id="hamburgerBtn" class="xl:hidden flex flex-col justify-between w-7 h-5 focus:outline-none">
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] opacity-0 invisible transition-all duration-300"></div>
+
+  <div id="mobileMenu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 h-screen w-[85%] max-w-[400px] bg-white dark:bg-darkCard z-[1001] p-8 pt-20 overflow-y-auto transform translate-x-full rtl:-translate-x-full transition-transform duration-300 shadow-2xl">
+    <button id="closeMenuBtn" class="absolute top-5 right-6 rtl:right-auto rtl:left-6 w-10 h-10 flex items-center justify-center rounded-full text-primary-500 text-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">âœ•</button>
+
+    <ul class="flex flex-col gap-1">
+      <li class="mobile-dropdown-wrapper border-b border-gray-200 dark:border-darkBorder py-2">
+        <div class="mobile-dropdown-toggle flex justify-between items-center cursor-pointer text-gray-900 dark:text-white text-lg font-medium">
+          <span class="flex items-center gap-2">Home</span>
+          <i class="fa-solid fa-chevron-down text-sm text-primary-500 transition-transform duration-300 dropdown-arrow"></i>
+        </div>
+        <div class="mobile-dropdown-content grid grid-rows-[0fr] transition-all duration-300 ltr:pl-4 rtl:pr-4">
+          <div class="overflow-hidden flex flex-col">
+            <a href="index.html" class="py-2 text-gray-800 dark:text-gray-200 font-medium hover:text-primary-500 mt-2">Home 1</a>
+            <a href="home2.html" class="py-2 text-gray-800 dark:text-gray-200 font-medium hover:text-primary-500">Home 2</a>
+          </div>
+        </div>
+      </li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="about.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">About</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="service.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Services</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="delivery.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Bulk Delivery</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="maintenance.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Tool Repair</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="booking.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Book Now</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="contact.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Contact</a></li>
+
+      <li class="border-b border-gray-200 dark:border-darkBorder py-2"><a href="brand.html" class="block text-center py-2.5 rounded-full bg-primary-500 text-white font-semibold hover:bg-primary-600 transition-colors shadow-sm">Brand</a></li>
+      <li class="pt-6 pb-2">
+        <div class="flex gap-4">
+          <a href="#" class="flex items-center justify-center w-12 rounded-full border-[1.5px] border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:text-primary-500 hover:border-primary-500 transition-colors relative">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="flex gap-4">
+          <button id="mobileDarkToggle" class="flex-1 py-2.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-500 hover:text-white transition-colors">ðŸŒ™ Dark</button>
+          <button id="mobileRtlToggle" class="flex-1 py-2.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Brand Hero Banner -->
+  <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=2000&auto=format&fit=crop');">
+    <div class="absolute inset-0 bg-slate-900/85"></div>
+    <div class="relative z-10 text-center p-6 md:p-12 w-full max-w-4xl">
+      <span class="inline-block px-4 py-1.5 bg-primary-500/20 text-primary-400 font-semibold tracking-wider text-xs md:text-sm rounded-full mb-4 border border-primary-500/30">
+        INDUSTRY LEADERS
+      </span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md">
+        Premium Brands We Trust
+      </h1>
+      <p class="text-lg md:text-xl text-amber-50 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+        We partner with the world's most reliable hardware, tool, and paint manufacturers to ensure your projects are built to last.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="w-full">
+    
+    <!-- Section 1: Top Brand Partners Grid -->
+    <section class="py-24 bg-white dark:bg-darkBg transition-colors duration-300 border-b border-gray-100 dark:border-darkBorder">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-primary-500 font-bold tracking-widest uppercase text-sm mb-2 block">Our Partners</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Shop by Brand</h2>
+        </div>
+        
+        <!-- Grid of Brands -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          
+          <!-- Brand Card 1 -->
+          <a href="#" class="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-40">
+            <h3 class="text-2xl font-black text-gray-800 dark:text-gray-200 tracking-tighter uppercase group-hover:text-primary-500 transition-colors">DEWALT<span class="text-primary-500">PRO</span></h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Power Tools</p>
+          </a>
+
+          <!-- Brand Card 2 -->
+          <a href="#" class="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-40">
+            <h3 class="text-2xl font-black text-blue-600 dark:text-blue-400 tracking-wider uppercase group-hover:text-primary-500 transition-colors">Makita<span class="font-light">X</span></h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Drills & Saws</p>
+          </a>
+
+          <!-- Brand Card 3 -->
+          <a href="#" class="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-40">
+            <h3 class="text-2xl font-extrabold text-red-600 dark:text-red-500 italic tracking-tight group-hover:text-primary-500 transition-colors">MILWAUKEE</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Heavy Duty Tools</p>
+          </a>
+
+          <!-- Brand Card 4 -->
+          <a href="#" class="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-40">
+            <h3 class="text-2xl font-bold text-green-700 dark:text-green-500 tracking-normal group-hover:text-primary-500 transition-colors">RYOBI</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">DIY & Garden</p>
+          </a>
+
+          <!-- Brand Card 5 -->
+          <a href="#" class="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-40">
+            <h3 class="text-2xl font-serif font-bold text-gray-800 dark:text-gray-200 group-hover:text-primary-500 transition-colors">SHERWIN<span class="text-sm align-top">®</span></h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Premium Paint</p>
+          </a>
+
+          <!-- Brand Card 6 -->
+          <a href="#" class="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-40">
+            <h3 class="text-2xl font-bold text-teal-600 dark:text-teal-400 tracking-wider group-hover:text-primary-500 transition-colors">BEHR</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Exterior Finishes</p>
+          </a>
+
+          <!-- Brand Card 7 -->
+          <a href="#" class="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-40">
+            <h3 class="text-2xl font-black text-gray-900 dark:text-white tracking-widest group-hover:text-primary-500 transition-colors">BOSCH</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Precision Instruments</p>
+          </a>
+
+          <!-- Brand Card 8 -->
+          <a href="#" class="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-darkCard rounded-2xl border border-gray-100 dark:border-darkBorder hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-40">
+            <h3 class="text-2xl font-extrabold text-orange-600 dark:text-orange-500 group-hover:text-primary-500 transition-colors">STIHL</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Outdoor Power</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Why Choose Our Brands -->
+    <section class="py-24 bg-gray-50 dark:bg-darkCard transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="grid grid-cols-2 gap-4">
+              <img src="images/image-1.jpg" alt="Brand Quality" class="rounded-2xl w-full h-48 object-cover shadow-md">
+              <img src="images/image-8.jpg" alt="Tools" class="rounded-2xl w-full h-48 object-cover shadow-md mt-8">
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <span class="text-primary-500 font-bold tracking-widest uppercase text-sm mb-2 block">Quality Assurance</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Built for the Toughest Jobs</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed">
+              We carefully curate our brand catalog based on durability, warranty support, and contractor feedback. When you buy from BuildPro, you are guaranteed authentic products backed by full manufacturer warranties.
+            </p>
+            
+            <ul class="space-y-6">
+              <li class="flex gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary-500/10 text-primary-500 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-certificate text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Authorized Dealer</h4>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">We are certified distributors for every brand we sell, ensuring genuine products.</p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary-500/10 text-primary-500 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-1">In-House Warranty Support</h4>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">Skip the hassle of mailing tools back. We process warranties directly at our service desk.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Become a Vendor CTA -->
+    <section class="py-20 bg-primary-500 dark:bg-primary-600 transition-colors duration-300">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6 drop-shadow-sm">Want to see your brand on our shelves?</h2>
+        <p class="text-white/90 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+          We are always looking to partner with innovative hardware and paint manufacturers. Join our network of trusted suppliers and reach thousands of contractors daily.
+        </p>
+        <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-bold rounded-full hover:bg-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          Apply to Become a Vendor <i class="fa-solid fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-300 pt-16 pb-8 border-t-4 border-primary-500 mt-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+
+      <div class="flex flex-col">
+        <a href="index.html" class="flex items-center gap-2 mb-6 inline-block">
+          <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center">
+            <i class="fa-solid fa-paint-roller text-white text-lg"></i>
+          </div>
+          <span class="text-2xl font-semibold text-white">Build<span class="text-primary-500">Pro</span></span></a>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">Your trusted partner for all construction, renovation, and painting needs. Supplying top-tier materials for every project.</p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">QuickLinks</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="index.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Home</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contact</a></li>
+          <li><a href="about.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">About Us</a></li>
+          <li><a href="service.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Services</a></li>
+          <li><a href="signup.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Register</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">Connect</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contact Support</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Store Locations</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Careers</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contractor Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">MailBox</h4>
+        <p class="text-gray-400 text-sm mb-4">Subscribe for seasonal tool discounts & 10% off your first paint mixing order.</p>
+        <div class="flex items-center border-b border-gray-800 pb-2 focus-within:border-primary-500 transition-colors">
+          <input type="email" placeholder="Your email" class="bg-transparent w-full outline-none text-white text-sm placeholder:text-gray-600">
+          <button class="text-primary-500 font-semibold hover:text-primary-400 transition-colors ml-2">→</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+      <span>© 2026 BuildPro Hardware & Paint. All rights reserved</span>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-primary-500 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-primary-500 transition-colors">Terms</a>
+        <a href="#" class="hover:text-primary-500 transition-colors">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Dark Mode Logic ---
+    function setDarkMode(isDark) {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('darkMode', isDark);
+
+      const darkToggle = document.getElementById('darkToggleBtn');
+      const mobileDark = document.getElementById('mobileDarkToggle');
+      if (darkToggle) {
+        darkToggle.innerHTML = isDark
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
+      }
+
+      if (mobileDark) {
+          mobileDark.innerHTML = isDark
+              ? '<i class="fa-solid fa-sun"></i> Light'
+              : '<i class="fa-solid fa-moon"></i> Dark';
+      }
+    }
+
+    document.getElementById('darkToggleBtn')?.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark'));
+    });
+    document.getElementById('mobileDarkToggle')?.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark'));
+    });
+
+    if (localStorage.getItem('darkMode') === 'true') {
+      setDarkMode(true);
+    }
+
+    // --- RTL Logic ---
+    function setRTL(isRTL) {
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      localStorage.setItem('rtlMode', isRTL);
+
+      const rtlToggle = document.getElementById('rtlToggleBtn');
+      const mobileRtl = document.getElementById('mobileRtlToggle');
+      if (rtlToggle) rtlToggle.innerText = isRTL ? 'RTL' : 'LTR';
+      if (mobileRtl) mobileRtl.innerText = isRTL ? 'RTL' : 'LTR';
+    }
+
+    const toggleRtlAction = () => {
+      setRTL(document.documentElement.getAttribute('dir') !== 'rtl');
+    };
+
+    document.getElementById('rtlToggleBtn')?.addEventListener('click', toggleRtlAction);
+    document.getElementById('mobileRtlToggle')?.addEventListener('click', toggleRtlAction);
+
+    if (localStorage.getItem('rtlMode') === 'true') {
+      setRTL(true);
+    }
+
+    // --- Mobile Menu Open/Close ---
+    const hamburger = document.getElementById('hamburgerBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    function toggleBodyScroll(lock) {
+      if (lock) document.body.style.overflow = 'hidden';
+      else document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+      mobileOverlay.classList.remove('opacity-0', 'invisible');
+      mobileMenu.classList.remove('translate-x-full', 'rtl:-translate-x-full');
+      mobileMenu.classList.add('translate-x-0', 'rtl:translate-x-0');
+      toggleBodyScroll(true);
+    }
+
+    function closeMobileMenu() {
+      mobileOverlay.classList.add('opacity-0', 'invisible');
+      mobileMenu.classList.add('translate-x-full', 'rtl:-translate-x-full');
+      mobileMenu.classList.remove('translate-x-0', 'rtl:translate-x-0');
+      toggleBodyScroll(false);
+    }
+
+    hamburger?.addEventListener('click', openMobileMenu);
+    closeMenuBtn?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+        closeMobileMenu();
+      }
+    });
+
+    // --- Mobile Dropdown Accordion ---
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const wrapper = toggle.closest('.mobile-dropdown-wrapper');
+        const content = wrapper.querySelector('.mobile-dropdown-content');
+        const arrow = toggle.querySelector('.dropdown-arrow');
+
+        const isOpen = content.classList.contains('grid-rows-[1fr]');
+
+        if (isOpen) {
+          content.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
+          arrow.classList.remove('-rotate-180');
+        } else {
+          content.classList.replace('grid-rows-[0fr]', 'grid-rows-[1fr]');
+          arrow.classList.add('-rotate-180');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
